@@ -184,7 +184,7 @@ function MindMapInner() {
         zoomOnScroll={false}
         zoomOnPinch
       >
-        <Background gap={32} size={1} color="oklch(0.35 0.03 265 / 0.4)" />
+        <Background gap={32} size={1} color="oklch(0.60 0.10 310 / 0.35)" />
         <Controls
           showInteractive={false}
           className="!rounded-xl !border !border-border !bg-card/80 !shadow-elegant !backdrop-blur-md"
