@@ -20,19 +20,11 @@ function MindMapNodeImpl({ data }: NodeProps) {
   const isRoot = d.depth === 0;
   const colorVar = isRoot ? "var(--primary)" : `var(--branch-${d.branch})`;
 
-  const handleClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    console.log("[mindmap] node clicked:", d.label, "hasChildren:", d.hasChildren);
-    if (d.hasChildren) d.onToggle();
-    if (d.hasContent && !isRoot) d.onOpen();
-  };
-
   if (isRoot) {
     return (
       <>
-        <button
-          onClick={handleClick}
-          className="nodrag nopan group relative flex cursor-pointer items-center justify-center rounded-full"
+        <div
+          className="group relative flex cursor-pointer items-center justify-center rounded-full"
           style={{
             width: 200,
             height: 200,
@@ -41,7 +33,7 @@ function MindMapNodeImpl({ data }: NodeProps) {
           }}
         >
           <div className="pointer-events-none absolute inset-1 rounded-full" style={{ background: "var(--card)" }} />
-          <div className="relative z-10 flex flex-col items-center gap-2 px-6 text-center">
+          <div className="pointer-events-none relative z-10 flex flex-col items-center gap-2 px-6 text-center">
             <Sparkles className="h-5 w-5" style={{ color: "var(--primary)" }} />
             <div className="font-display text-2xl leading-tight" style={{ color: "var(--primary)" }}>
               Information
@@ -49,7 +41,7 @@ function MindMapNodeImpl({ data }: NodeProps) {
               Retrieval
             </div>
           </div>
-        </button>
+        </div>
         <Handle type="source" position={Position.Right} className="!opacity-0" />
       </>
     );
@@ -58,9 +50,8 @@ function MindMapNodeImpl({ data }: NodeProps) {
   return (
     <>
       <Handle type="target" position={Position.Left} className="!opacity-0" />
-      <button
-        onClick={handleClick}
-        className={`nodrag nopan group relative flex cursor-pointer items-center gap-3 rounded-2xl border bg-card/90 px-4 py-3 text-left backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-card ${
+      <div
+        className={`group relative flex cursor-pointer items-center gap-3 rounded-2xl border bg-card/90 px-4 py-3 text-left backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-card ${
           d.selected ? "ring-2 ring-offset-2 ring-offset-background" : ""
         }`}
         style={{
@@ -73,10 +64,10 @@ function MindMapNodeImpl({ data }: NodeProps) {
         }}
       >
         <span
-          className="h-9 w-1 shrink-0 rounded-full"
+          className="pointer-events-none h-9 w-1 shrink-0 rounded-full"
           style={{ background: colorVar, boxShadow: `0 0 12px ${colorVar}` }}
         />
-        <div className="flex-1">
+        <div className="pointer-events-none flex-1">
           <div
             className={`leading-tight text-foreground ${
               d.depth === 1 ? "font-display text-lg" : "text-sm font-medium"
@@ -92,14 +83,14 @@ function MindMapNodeImpl({ data }: NodeProps) {
         </div>
         {d.hasChildren && (
           <ChevronRight
-            className="h-4 w-4 shrink-0 transition-transform"
+            className="pointer-events-none h-4 w-4 shrink-0 transition-transform"
             style={{
               color: colorVar,
               transform: d.expanded ? "rotate(90deg)" : "rotate(0deg)",
             }}
           />
         )}
-      </button>
+      </div>
       <Handle type="source" position={Position.Right} className="!opacity-0" />
     </>
   );
