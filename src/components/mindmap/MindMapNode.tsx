@@ -22,6 +22,7 @@ function MindMapNodeImpl({ data }: NodeProps) {
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+    console.log("[mindmap] node clicked:", d.label, "hasChildren:", d.hasChildren);
     if (d.hasChildren) d.onToggle();
     if (d.hasContent && !isRoot) d.onOpen();
   };
