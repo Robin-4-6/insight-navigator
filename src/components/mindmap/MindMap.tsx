@@ -179,7 +179,12 @@ function MindMapInner() {
         proOptions={{ hideAttribution: true }}
         nodesDraggable={false}
         nodesConnectable={false}
-        elementsSelectable={false}
+        elementsSelectable
+        onNodeClick={(_e, node) => {
+          const d = node.data as { hasChildren?: boolean; hasContent?: boolean; depth?: number };
+          if (d.hasChildren) toggle(node.id);
+          if (d.hasContent && d.depth !== 0) setSelectedId(node.id);
+        }}
         panOnScroll
         zoomOnScroll={false}
         zoomOnPinch
