@@ -48,7 +48,6 @@ function MindMapNodeImpl({ data }: NodeProps) {
               <br />
               Retrieval
             </div>
-            <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Module Map</div>
           </div>
         </button>
         <Handle type="source" position={Position.Right} className="!opacity-0" />
