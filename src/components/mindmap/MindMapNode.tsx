@@ -20,7 +20,8 @@ function MindMapNodeImpl({ data }: NodeProps) {
   const isRoot = d.depth === 0;
   const colorVar = isRoot ? "var(--primary)" : `var(--branch-${d.branch})`;
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (d.hasChildren) d.onToggle();
     if (d.hasContent && !isRoot) d.onOpen();
   };
@@ -30,7 +31,8 @@ function MindMapNodeImpl({ data }: NodeProps) {
       <>
         <button
           onClick={handleClick}
-          className="group relative flex items-center justify-center rounded-full"
+          onPointerDown={(e) => e.stopPropagation()}
+          className="nodrag nopan group relative flex cursor-pointer items-center justify-center rounded-full"
           style={{
             width: 200,
             height: 200,
@@ -38,10 +40,10 @@ function MindMapNodeImpl({ data }: NodeProps) {
             boxShadow: "var(--shadow-glow), var(--shadow-elegant)",
           }}
         >
-          <div className="absolute inset-1 rounded-full" style={{ background: "var(--background-deep)" }} />
+          <div className="pointer-events-none absolute inset-1 rounded-full" style={{ background: "var(--card)" }} />
           <div className="relative z-10 flex flex-col items-center gap-2 px-6 text-center">
-            <Sparkles className="h-5 w-5" style={{ color: colorVar }} />
-            <div className="font-display text-2xl leading-tight text-foreground">
+            <Sparkles className="h-5 w-5" style={{ color: "var(--primary)" }} />
+            <div className="font-display text-2xl leading-tight" style={{ color: "var(--primary)" }}>
               Information
               <br />
               Retrieval
@@ -59,7 +61,8 @@ function MindMapNodeImpl({ data }: NodeProps) {
       <Handle type="target" position={Position.Left} className="!opacity-0" />
       <button
         onClick={handleClick}
-        className={`group relative flex items-center gap-3 rounded-2xl border bg-card/80 px-4 py-3 text-left backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-card ${
+        onPointerDown={(e) => e.stopPropagation()}
+        className={`nodrag nopan group relative flex cursor-pointer items-center gap-3 rounded-2xl border bg-card/90 px-4 py-3 text-left backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-card ${
           d.selected ? "ring-2 ring-offset-2 ring-offset-background" : ""
         }`}
         style={{
