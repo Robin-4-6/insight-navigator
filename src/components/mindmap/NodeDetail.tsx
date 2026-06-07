@@ -113,10 +113,10 @@ export function NodeDetail({ node, onClose }: Props) {
     <>
       <div
         onClick={onClose}
-        className={`fixed inset-0 z-40 bg-background-deep/60 backdrop-blur-sm transition-opacity ${
+        className={`fixed inset-0 z-40 backdrop-blur-sm transition-opacity ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
-        style={{ background: "color-mix(in oklab, var(--background-deep) 70%, transparent)" }}
+        style={{ background: "color-mix(in oklab, var(--primary) 18%, transparent)" }}
       />
       <aside
         className={`fixed right-0 top-0 z-50 flex h-full w-full max-w-xl flex-col border-l bg-card/95 shadow-2xl backdrop-blur-xl transition-transform duration-500 ${
