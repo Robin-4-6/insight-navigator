@@ -31,7 +31,6 @@ function MindMapNodeImpl({ data }: NodeProps) {
       <>
         <button
           onClick={handleClick}
-          onPointerDown={(e) => e.stopPropagation()}
           className="nodrag nopan group relative flex cursor-pointer items-center justify-center rounded-full"
           style={{
             width: 200,
@@ -60,7 +59,6 @@ function MindMapNodeImpl({ data }: NodeProps) {
       <Handle type="target" position={Position.Left} className="!opacity-0" />
       <button
         onClick={handleClick}
-        onPointerDown={(e) => e.stopPropagation()}
         className={`nodrag nopan group relative flex cursor-pointer items-center gap-3 rounded-2xl border bg-card/90 px-4 py-3 text-left backdrop-blur-md transition-all hover:-translate-y-0.5 hover:bg-card ${
           d.selected ? "ring-2 ring-offset-2 ring-offset-background" : ""
         }`}
