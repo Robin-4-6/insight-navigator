@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Information Retrieval — Interactive Mind Map" },
-      { name: "description", content: "An elegant interactive mind map exploring the foundations, models, indexing, relevance, and evaluation of Information Retrieval." },
+      { title: "mind Map" },
+      { name: "description", content: "An interactive mind map visualizing the core concepts of Information Retrieval (IR)." },
       { name: "author", content: "IR Module" },
-      { property: "og:title", content: "Information Retrieval — Interactive Mind Map" },
-      { property: "og:description", content: "Explore the IR module visually: foundations, IRS, indexing, retrieval models, relevance, and evaluation." },
+      { property: "og:title", content: "mind Map" },
+      { property: "og:description", content: "An interactive mind map visualizing the core concepts of Information Retrieval (IR)." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "mind Map" },
+      { name: "twitter:description", content: "An interactive mind map visualizing the core concepts of Information Retrieval (IR)." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/af69b01e-ecea-4b97-9092-6120b5ddb283/id-preview-0fc82d51--cdb176c0-03ef-457e-8089-e0295be30834.lovable.app-1780876861485.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/af69b01e-ecea-4b97-9092-6120b5ddb283/id-preview-0fc82d51--cdb176c0-03ef-457e-8089-e0295be30834.lovable.app-1780876861485.png" },
     ],
     links: [
       {
