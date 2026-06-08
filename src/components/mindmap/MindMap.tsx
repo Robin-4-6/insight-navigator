@@ -179,12 +179,17 @@ function MindMapInner() {
         proOptions={{ hideAttribution: true }}
         nodesDraggable={false}
         nodesConnectable={false}
-        elementsSelectable={false}
+        elementsSelectable
+        onNodeClick={(_e, node) => {
+          const d = node.data as { hasChildren?: boolean; hasContent?: boolean; depth?: number };
+          if (d.hasChildren) toggle(node.id);
+          if (d.hasContent && d.depth !== 0) setSelectedId(node.id);
+        }}
         panOnScroll
         zoomOnScroll={false}
         zoomOnPinch
       >
-        <Background gap={32} size={1} color="oklch(0.35 0.03 265 / 0.4)" />
+        <Background gap={32} size={1} color="oklch(0.60 0.10 310 / 0.35)" />
         <Controls
           showInteractive={false}
           className="!rounded-xl !border !border-border !bg-card/80 !shadow-elegant !backdrop-blur-md"

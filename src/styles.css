@@ -64,47 +64,47 @@
 :root {
   --radius: 0.75rem;
 
-  /* Deep editorial midnight palette */
-  --background: oklch(0.16 0.025 265);
-  --background-deep: oklch(0.12 0.022 265);
-  --foreground: oklch(0.96 0.01 250);
+  /* Soft lavender / blush palette — feminine, elegant, editorial */
+  --background: oklch(0.97 0.012 320);
+  --background-deep: oklch(0.94 0.02 320);
+  --foreground: oklch(0.28 0.06 310);
 
-  --card: oklch(0.20 0.028 265);
-  --card-foreground: oklch(0.96 0.01 250);
-  --popover: oklch(0.20 0.028 265);
-  --popover-foreground: oklch(0.96 0.01 250);
+  --card: oklch(0.99 0.005 320);
+  --card-foreground: oklch(0.28 0.06 310);
+  --popover: oklch(0.99 0.005 320);
+  --popover-foreground: oklch(0.28 0.06 310);
 
-  /* Warm gold accent for premium editorial feel */
-  --primary: oklch(0.82 0.12 80);
-  --primary-foreground: oklch(0.16 0.025 265);
-  --primary-glow: oklch(0.88 0.14 85);
+  /* Rich purple primary with soft glow */
+  --primary: oklch(0.55 0.18 305);
+  --primary-foreground: oklch(0.99 0.005 320);
+  --primary-glow: oklch(0.78 0.15 330);
 
-  --secondary: oklch(0.26 0.03 265);
-  --secondary-foreground: oklch(0.96 0.01 250);
-  --muted: oklch(0.24 0.028 265);
-  --muted-foreground: oklch(0.68 0.02 255);
-  --accent: oklch(0.72 0.14 220);
-  --accent-foreground: oklch(0.12 0.022 265);
-  --destructive: oklch(0.65 0.22 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.30 0.03 265);
-  --input: oklch(0.26 0.03 265);
-  --ring: oklch(0.82 0.12 80);
+  --secondary: oklch(0.94 0.025 320);
+  --secondary-foreground: oklch(0.30 0.08 310);
+  --muted: oklch(0.94 0.018 320);
+  --muted-foreground: oklch(0.50 0.05 310);
+  --accent: oklch(0.80 0.12 340);
+  --accent-foreground: oklch(0.28 0.06 310);
+  --destructive: oklch(0.62 0.22 20);
+  --destructive-foreground: oklch(0.99 0.005 320);
+  --border: oklch(0.88 0.035 320);
+  --input: oklch(0.92 0.025 320);
+  --ring: oklch(0.55 0.18 305);
 
-  /* Per-branch hues to color-code the mindmap */
-  --branch-1: oklch(0.78 0.14 35);   /* coral */
-  --branch-2: oklch(0.80 0.13 80);   /* gold */
-  --branch-3: oklch(0.78 0.14 145);  /* sage */
-  --branch-4: oklch(0.78 0.14 200);  /* sky */
-  --branch-5: oklch(0.75 0.15 260);  /* indigo */
-  --branch-6: oklch(0.78 0.14 320);  /* pink */
-  --branch-7: oklch(0.80 0.13 50);   /* amber */
-  --branch-8: oklch(0.78 0.14 175);  /* teal */
+  /* Per-branch purple/pink spectrum */
+  --branch-1: oklch(0.62 0.18 295);  /* deep violet */
+  --branch-2: oklch(0.68 0.18 315);  /* orchid */
+  --branch-3: oklch(0.72 0.16 335);  /* rose pink */
+  --branch-4: oklch(0.76 0.14 350);  /* blush */
+  --branch-5: oklch(0.58 0.20 285);  /* indigo violet */
+  --branch-6: oklch(0.70 0.18 325);  /* magenta */
+  --branch-7: oklch(0.74 0.14 305);  /* lavender */
+  --branch-8: oklch(0.66 0.20 340);  /* fuchsia */
 
-  --gradient-radial: radial-gradient(ellipse at center, oklch(0.22 0.03 265) 0%, oklch(0.12 0.022 265) 70%);
-  --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-glow));
-  --shadow-elegant: 0 20px 60px -20px oklch(0 0 0 / 0.6), 0 0 0 1px oklch(1 0 0 / 0.04);
-  --shadow-glow: 0 0 40px -8px color-mix(in oklab, var(--primary) 50%, transparent);
+  --gradient-radial: radial-gradient(ellipse at center, oklch(0.98 0.015 325) 0%, oklch(0.93 0.03 320) 60%, oklch(0.88 0.05 325) 100%);
+  --gradient-primary: linear-gradient(135deg, oklch(0.60 0.20 305), oklch(0.78 0.16 335));
+  --shadow-elegant: 0 20px 60px -20px oklch(0.40 0.18 305 / 0.25), 0 0 0 1px oklch(0.55 0.18 305 / 0.06);
+  --shadow-glow: 0 0 50px -8px color-mix(in oklab, var(--primary) 45%, transparent);
 
   --font-display: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
